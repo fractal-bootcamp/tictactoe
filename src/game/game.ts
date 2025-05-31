@@ -23,11 +23,6 @@ export type Game = {
     board: Board,
     currentPlayer: Player,
     endState?: EndState,
-    // context: {
-    //     active: 
-    //     info: 
-    //     error: 
-    // }
 }
 
 
@@ -53,7 +48,6 @@ const winningStates: CellIndex[][] = [
 const playerWins = (game: Game, player: Player) => {
     return winningStates.some((winState) => winState.every((cellIndex) => game.board[cellIndex] === player))
 }
-
 const xWins = (game: Game) => playerWins(game, 'x')
 const oWins = (game: Game) => playerWins(game, 'o')
 
