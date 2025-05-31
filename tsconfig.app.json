@@ -27,6 +27,6 @@
   },
   "include": [
     "src",
-    "game.ts"
+    "src/game/game.ts"
   ]
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { initialGameState, move, type CellIndex } from '../game'
+import { initialGameState, move, type CellIndex } from './game/game'
 
 
 function App() {

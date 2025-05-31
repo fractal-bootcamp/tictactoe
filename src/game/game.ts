@@ -51,11 +51,7 @@ const winningStates: CellIndex[][] = [
 
 
 const playerWins = (game: Game, player: Player) => {
-    return winningStates.some((winState) => {
-        return winState.every((cellIndex) => {
-            return game.board[cellIndex] === player
-        })
-    })
+    return winningStates.some((winState) => winState.every((cellIndex) => game.board[cellIndex] === player))
 }
 
 const xWins = (game: Game) => playerWins(game, 'x')
@@ -73,12 +69,12 @@ function calculateEndState(game: Game): EndState {
 // I want this to be a "pure" function.
 // "calculation"
 export function move(game: Game, position: CellIndex): Game {
-    // make a copy of the game, so I can safely edit and mess around with it.
     if (game.board[position] != null) {
         console.log('that move is already taken!')
         return game
     }
 
+    // make a copy of the game, so I can safely edit and mess around with it.
     // plausible nextGame state
     const nextGame = structuredClone(game)
     nextGame.board[position] = game.currentPlayer
